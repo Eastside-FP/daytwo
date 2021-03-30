@@ -350,4 +350,15 @@ returns a number.
 
 Homework:
 
-Complete lab: "Write functions that..."
+Fork the repository https://github.com/Eastside-FP/daytwo, then clone
+your version of it to your local machine. 
+
+This README.md file summaries what we covered in class (it's probably
+easiest to read the nicely formatted version on github).
+
+Once you're comfortable with the material, edit the file assignment.hs
+and define the five functions it asks for, checking each time that it
+runs in ghci. Finally, play a little with ther `eulerSum` function I
+supplied.
+
+
