@@ -326,7 +326,7 @@ value of that same type."
 
 ### Types of Functions with Multiple Parameters
 
-Again, is VSC:
+Let's look at what VCS suggests as the type of a function with (apparently) two arguments.:
 
 ~~~ haskell
 -- add :: Num a => a -> a -> a
