@@ -70,7 +70,7 @@ So, remember this: FUNCTIONS IN HASKELL ARE JUST VALUES.
 
 What's the reason for the strange notation `\x -> x*x`? Why the backslash and the arrow?
 
-It all goes back to the 1930, and a mathematician called Alonso Church who tried to come up with a way of
+It all goes back to the 1930, and a mathematician called Alonzo Church who tried to come up with a way of
 describing things such as sets of numbers using just functions and variables. Part of his approach required
 something that could be used to generate values: he created something called _lambda calculus_, so named
 because he used the notation _λ n → n ∗ n_. The backslash in Haskell function definitions is
