@@ -23,7 +23,7 @@ import Prelude
 -- returns the reciprocal of that number. This should make (1a) and (1b) 
 -- correct in the main function at the end
 
-reciprocal x = . . .
+reciprocal x = 1/x
 
 
 -------
@@ -33,7 +33,7 @@ reciprocal x = . . .
 -- write a function square that squared a number. Uncomment (2) below
 -- and check it works.
 
--- your code here
+square x = x*x
 
 -------
 -- 3 --
@@ -43,7 +43,7 @@ reciprocal x = . . .
 -- that returns the reciprocal of the square of its parameter
 -- (that it, 1 / x²). Make sure (3) works.
 
--- your code
+oneOverXSquared x = reciprocal (square x)
 
 -------
 -- 4 --
@@ -56,7 +56,7 @@ reciprocal x = . . .
 -- Write a function that generates an infinite list of 1/x² for x = 1, 2, 3,…
 -- Call the function `series`. (4) below should now be correct
 
--- your code
+series = map oneOverXSquared [1..]
 
 -------
 -- 5 --
@@ -78,8 +78,7 @@ reciprocal x = . . .
 --
 --  Uncomment (5) to verify
 
--- your code
-
+sumOfFirst x l = sum(take x l)
 -------
 -- 6 --
 -------
@@ -94,15 +93,16 @@ reciprocal x = . . .
 
 eulerSum n = sqrt $ 6 * sumOfFirst n series
 
+-- converges to pi
 
 main = do
   print ("1a. Should be 0.5: " ++ (show $ reciprocal 2))
   print ("1b. Should be 4.0: "   ++ (show $ reciprocal 0.25))
 
-  -- print ("2. Should be 25: " ++ (show $ square 5))
+  print ("2. Should be 25: " ++ (show $ square 5))
 
-  -- print ("3. Should be 0.25: " ++ (show $ oneOverXSquared 2))
+  print ("3. Should be 0.25: " ++ (show $ oneOverXSquared 2))
 
-  -- print ("4. Should be [1.0, 0.25, 0.11.., 0.0625]: " ++ (show $ take 4 series))
+  print ("4. Should be [1.0, 0.25, 0.11.., 0.0625]: " ++ (show $ take 4 series))
 
-  -- print ("5. Should be roughly 1.4236: " ++ ( show $ sumOfFirst 4 series))
+  print ("5. Should be roughly 1.4236: " ++ ( show $ sumOfFirst 4 series))
