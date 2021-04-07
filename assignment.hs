@@ -20,10 +20,10 @@ import Prelude
 -------
 
 -- write a function `reciprocal` that takes a single parameter and
--- returns the reciprocal of that number. This should make (1a) and (1b) 
+-- returns the reciprocal of that :number. This should make (1a) and (1b) 
 -- correct in the main function at the end
 
-reciprocal x = . . .
+reciprocal x = 1/x
 
 
 -------
@@ -35,6 +35,8 @@ reciprocal x = . . .
 
 -- your code here
 
+square x = x*x
+
 -------
 -- 3 --
 -------
@@ -44,6 +46,8 @@ reciprocal x = . . .
 -- (that it, 1 / x²). Make sure (3) works.
 
 -- your code
+
+oneOverXSquared x = reciprocal(square x)
 
 -------
 -- 4 --
@@ -58,27 +62,31 @@ reciprocal x = . . .
 
 -- your code
 
+series = map oneOverXSquared [1..]
+
 -------
 -- 5 --
 -------
 
 -- The `take` built-in function returns the first `n` elements of a collection:
 --
---      take 5 [1..]    => [ 1, 2, 3, 4, 5 ]
+--  take 5 [1..]    => [ 1, 2, 3, 4, 5 ]
 --
 -- The `sum` function returns the sum of a collection
 --
---      sum [ 1, 2, 3, 4, 5 ]   => 15
+--  sum [ 1, 2, 3, 4, 5 ]   => 15
 --      (could also have written: sum [1..5])
 --
 --  Write a function `sumOfFirst` that takes a number and a (possibily infinite)
 --  list of numbers and returns the sum of the first n elements
 --
---       sumOfFirat 5 [1..]     => 15
+--     sumOfFirst 5 [1..] => 15
 --
 --  Uncomment (5) to verify
 
 -- your code
+
+sumOfFirst x list = sum (take x list)
 
 -------
 -- 6 --
@@ -94,15 +102,16 @@ reciprocal x = . . .
 
 eulerSum n = sqrt $ 6 * sumOfFirst n series
 
+-- converges to        p i 
 
 main = do
   print ("1a. Should be 0.5: " ++ (show $ reciprocal 2))
   print ("1b. Should be 4.0: "   ++ (show $ reciprocal 0.25))
+ 
+  print ("2. Should be 25: " ++ (show $ square 5))
 
-  -- print ("2. Should be 25: " ++ (show $ square 5))
+  print ("3. Should be 0.25: " ++ (show $ oneOverXSquared 2))
 
-  -- print ("3. Should be 0.25: " ++ (show $ oneOverXSquared 2))
+  print ("4. Should be [1.0, 0.25, 0.11.., 0.0625]: " ++ (show $ take 4 series))
 
-  -- print ("4. Should be [1.0, 0.25, 0.11.., 0.0625]: " ++ (show $ take 4 series))
-
-  -- print ("5. Should be roughly 1.4236: " ++ ( show $ sumOfFirst 4 series))
+  print ("5. Should be roughly 1.4236: " ++ ( show $ sumOfFirst 4 series))
